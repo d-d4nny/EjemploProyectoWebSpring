@@ -1,0 +1,147 @@
+body {
+    background-color: #f8f9fa; /* Color de fondo */
+}
+
+.contenedor {
+    background-color: #fff;
+    box-shadow: rgba(40, 88, 69, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    margin: auto;
+    margin-top: 50px; /* Espacio superior */
+    
+}
+
+.panelAdmin {
+    background-color: #192255;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+.burbuja {
+    background-color: #fff;
+    color: #285845;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.form-login { /*form-login*/
+    width: 350px;
+    height: 435px;
+}
+
+.form-restablecer { 
+    width: 450px;
+    height: 320px;
+}
+
+.form-registro {
+    width: 350px;
+    height: 660px;
+}
+
+.form-olvidado {
+    width: 350px;
+    height: 365px;
+}
+
+.titulo {
+    text-align: left;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin: 10px 0 30px 0;
+    font-size: 28px;
+    font-weight: 800;
+    color: #192255;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.input {
+    border-radius: 20px;
+    border: 1px solid #192255;
+    outline: 0 !important;
+    box-sizing: border-box;
+    padding: 12px 15px;
+}
+
+.form-btn {
+    padding: 10px 15px;
+    width: 100%;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: #285845;
+    color: white;
+    cursor: pointer;
+    /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
+    box-shadow: 0px 3px 8px rgba(40, 88, 69, 0.24);
+}
+
+.form-btn:active {
+    box-shadow: none;
+}
+
+.negro {
+    background: black;
+}
+
+.mi-recuadro {
+    width: 300px; /* Ancho del recuadro */
+    height: 75px; /* Altura del recuadro */
+    border: 2px solid #ff9900; /* Borde s�lido de 2 p�xeles, color #333 */
+    padding: 20px; /* Espaciado interno de 20 p�xeles */
+    margin: 3px auto; /* Margen superior e inferior de 50 p�xeles, centrado horizontalmente */
+    text-align: center; /* Alineaci�n del texto al centro */
+    background-color: white; /* Color de fondo */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 25px; /* Ajusta esto a la altura del recuadro */
+}
+
+.mi-recuadro div {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #192255;
+    }
+
+/* Estilos para los enlaces (si no hay enlaces quitar)*/
+a {
+    color: inherit; /* O puedes establecer un color espec�fico, por ejemplo: color: #000; */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none; /* Quita el subrayado cuando el rat�n est� sobre el enlace */
+    color: inherit; /* Mantiene el color del texto del elemento padre cuando el rat�n est� sobre el enlace */
+}
+
+.mensajeContrasenya {
+    text-align: center;
+    margin-top: -8px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #192255;
+}
+
+#mensajeContrasenya {
+    text-align: center;
+    margin-top: -8px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 700; /*valor maximo 700*/
+    color: #192255;
+}

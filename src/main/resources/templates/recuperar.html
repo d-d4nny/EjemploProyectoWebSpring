@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Recuperar contraseña</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<link rel="stylesheet" href="../static/css/estilo.css" th:href="@{/css/estilo.css}">
+	<link rel="stylesheet" href="../static/css/menu.css" th:href="@{/css/menu.css}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script th:src="@{/script/script.js}"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<div class="contenedor form-restablecer" >
+		<div class="row">
+			<div class="col-sm-10 offset-1">
+				<p class="titulo">Restablecer contraseña</p>
+				<form th:action="@{/auth/recuperar}" th:object="${usuarioDTO}" method="post">
+					<input type="hidden" th:field="*{token}"/>
+					<input type="password" th:field="*{password}" class="form-control" required 
+						   oninput="revisarContraseña()" id="claveUsuario" placeholder="Nueva Contraseña"/>
+					<br />
+					<input type="password" th:field="*{password2}" class="form-control" required 
+						   oninput="revisarContraseña()" id="confirmarClaveUsuario" placeholder="Confirmar Contraseña"/>
+					<br />
+					<div class="mensajeContrasenya" id="mensajeContrasenya"></div>
+					<div class="text-right mt-3">
+						<button type="submit" id="btnRegistro" class="form-btn">Recuperar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="mensajeErrorToken" th:text="${mensajeErrorTokenValidez}" style="display:none;"></div>
+	<script>
+	    const mensajeErrorToken = document.getElementById('mensajeErrorToken').innerText;
+	
+	    if (mensajeErrorToken.trim() !== '') {
+	    mostrarNotificacion("¡Error!", "Token no válido o usuario no encontrado", 'error');
+	    }
+	</script>
+
+</body>
+</html>

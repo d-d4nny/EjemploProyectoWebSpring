@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Inicio Recuperacion</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet" href="../static/css/estilo.css"
+	th:href="@{/css/estilo.css}">
+<link rel="stylesheet" href="../static/css/menu.css"
+	th:href="@{/css/menu.css}">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+	th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script th:src="@{/script/script.js}"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<nav>
+		<div class="menu">
+			<div class="logo">
+				<a>Biblioteca</a>
+			</div>
+			<ul class="nav-links">
+				<li><a th:href="@{/auth/login}">Volver</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="contenedor form-olvidado">
+		<p class="titulo">Restablecer la contraseña</p>
+		<form class="form" th:action="@{/auth/iniciarRecuperacion}" enctype="multipart/form-data" th:object="${usuarioDTO}" method="post">
+			<input type="email" th:field="*{emailUsuario}" class="form-control" placeholder="Email"/>
+			<div class="text-right mt-1">
+				<button type="submit" class="form-btn">Recuperar</button>
+			</div>
+			<div class="mi-recuadro">
+				<div>Le enviaremos un email con un enlace para modificar su contraseña.</div>
+			</div>
+		</form>
+	</div>
+	<script th:if="${not #strings.isEmpty(mensajeErrorMail)}">
+	    mostrarNotificacion("¡Error!", "Se ha producido un error en el proceso de recuperación, revisa la información ingresada.", 'error');
+	</script>
+	<script th:if="${not #strings.isEmpty(contraseñaModificadaError)}">
+	    mostrarNotificacion("¡Error!", "Ha ocurrido un error al reestablecer la contraseña", 'error');
+	</script>
+	<script th:if="${not #strings.isEmpty(mensajeErrorTokenValidez)}">
+	    mostrarNotificacion("¡Error!", "Token no válido", 'error');
+	</script>
+	<script th:if="${not #strings.isEmpty(mensajeErrorTokenExpirado)}">
+	    mostrarNotificacion("¡Error!", "El token ha expirado", 'error');
+	</script>
+</body>
+</html>
